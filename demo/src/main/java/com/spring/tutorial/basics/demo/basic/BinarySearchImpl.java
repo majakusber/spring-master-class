@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BinarySearchImpl {
 
@@ -18,11 +18,11 @@ public class BinarySearchImpl {
 
   @Autowired
   @Qualifier("bubble")
-  private SortAlgorithm quickSortAlgorithm;
+  private SortAlgorithm sortAlgorithm;
 
   public int search(int[] numbers, int numberToSearchFor) {
-    System.out.println(quickSortAlgorithm);
-    int[] sortedNumbers = quickSortAlgorithm.sort(numbers);
+    System.out.println(sortAlgorithm);
+    int[] sortedNumbers = sortAlgorithm.sort(numbers);
 
     // search the array
     return 108;
